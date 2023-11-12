@@ -160,7 +160,13 @@ spec:
             value: "true"
         ports:
         - containerPort: 5002
-        resources: {}
+        resources:
+          requests:
+            cpu: 300m
+            memory: 3Gi
+          limits:
+            cpu: 500m
+            memory: 5Gi
 ---
 apiVersion: v1
 kind: Service
