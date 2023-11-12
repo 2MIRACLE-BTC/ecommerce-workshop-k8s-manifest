@@ -6,9 +6,9 @@ metadata:
   namespace: ecommerce
 spec:
   hard:
-    requests.cpu: "1"
-    requests.memory: 3Gi
-    limits.cpu: "5"
+    requests.cpu: "700m"
+    requests.memory: 7Gi
+    limits.cpu: "1200m"
     limits.memory: 20Gi
     
 
