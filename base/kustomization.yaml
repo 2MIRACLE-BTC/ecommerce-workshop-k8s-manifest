@@ -7,7 +7,7 @@ resources:
   - advertisements.yaml
   - namespace.yaml
   - ingress.yaml
-  # - front-hpa.yaml
+  - front-hpa.yaml
   - resourcequota.yaml
   - limitRange.yaml
 
