@@ -203,10 +203,10 @@ spec:
           protocol: TCP
         resources:
           requests:
-            cpu: 300m
+            cpu: 200m
             memory: 500Mi
           limits:
-            cpu: 800m
+            cpu: 600m
             memory: 1Gi
 ---
 apiVersion: v1
