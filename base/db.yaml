@@ -83,7 +83,13 @@ spec:
           value: "user"
         - name: PGDATA
           value: "/var/lib/postgresql/data/mydata"
-        resources: {}
+        resources:
+          requests:
+            cpu: 100m
+            memory: 1Gi
+          limits:
+            cpu: 300m
+            memory: 3Gi
         volumeMounts:
         - mountPath: /var/lib/postgresql/data
           name: postgresdb 
@@ -92,13 +98,7 @@ spec:
       - name: postgresdb
         persistentVolumeClaim:
             claimName: task-pvc-volume
-        resources:
-          requests:
-            cpu: 100m
-            memory: 1Gi
-          limits:
-            cpu: 300m
-            memory: 3Gi
+    
 ---
 apiVersion: v1
 kind: Service
