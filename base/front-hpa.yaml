@@ -17,6 +17,41 @@
 #       target:
 #         type: Utilization
 #         averageUtilization: 80
+# apiVersion: autoscaling/v2
+# kind: HorizontalPodAutoscaler
+# metadata:
+#   name: frontend-hpa
+#   namespace: ecommerce
+# spec:
+#   scaleTargetRef:
+#     apiVersion: argoproj.io/v1alpha1
+#     kind: Rollout
+#     name: frontend
+#   minReplicas: 2
+#   maxReplicas: 4
+#   metrics:
+#   - type: Resource
+#     resource:
+#       name: cpu
+#       target:
+#         type: Utilization
+#         averageUtilization: 80
+#   behavior:
+#     scaleUp:
+#       policies:
+#       - type: Pods
+#         value: 1
+#         periodSeconds: 15
+#       selectPolicy: Max
+#       stabilizationWindowSeconds: 180  # 3분 동안 CPU 사용률을 평가
+#     scaleDown:
+#       policies:
+      # - type: Pods
+      #   value: 1
+      #   periodSeconds: 15
+      # selectPolicy: Max
+      # stabilizationWindowSeconds: 60  # 1분 동안 CPU 사용률을 평가
+
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
@@ -24,11 +59,11 @@ metadata:
   namespace: ecommerce
 spec:
   scaleTargetRef:
-    apiVersion: argoproj.io/v1alpha1
-    kind: Rollout
+    apiVersion: apps/v1
+    kind: Deployment
     name: frontend
   minReplicas: 2
-  maxReplicas: 4
+  maxReplicas: 20
   metrics:
   - type: Resource
     resource:
@@ -43,11 +78,11 @@ spec:
         value: 1
         periodSeconds: 15
       selectPolicy: Max
-      stabilizationWindowSeconds: 180  # 3분 동안 CPU 사용률을 평가
+      stabilizationWindowSeconds: 30  # 3분 동안 CPU 사용률을 평가
     scaleDown:
       policies:
       - type: Pods
         value: 1
         periodSeconds: 15
       selectPolicy: Max
-      stabilizationWindowSeconds: 60  # 1분 동안 CPU 사용률을 평가
+      stabilizationWindowSeconds: 30  # 1분 동안 CPU 사용률을 평가
