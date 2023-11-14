@@ -63,7 +63,7 @@ spec:
           value: "http://adv-rollout-bluegreen-active"
         - name: ADS_PORT
           value: "5002"
-        image: 241825837502.dkr.ecr.ap-northeast-2.amazonaws.com/frontend:b2bf490c
+        image: 241825837502.dkr.ecr.ap-northeast-2.amazonaws.com/frontend:gold
         envFrom:
         - secretRef:
             name: mir-secret
