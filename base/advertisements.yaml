@@ -100,6 +100,8 @@ metadata:
     app: ecommerce
   name: advertisements
   namespace: ecommerce
+  annotations:
+    notifications.argoproj.io/subscribe.on-rollout-step-completed.slack: 2mir-argocd-noti
 spec:
   replicas: 2
   revisionHistoryLimit: 3
