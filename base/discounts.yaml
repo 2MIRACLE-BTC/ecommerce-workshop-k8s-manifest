@@ -21,8 +21,6 @@ spec:
       labels:
         tags.datadoghq.com/service: discounts
         tags.datadoghq.com/env: "development"
-        admission.datadoghq.com/enabled: "true"
-
         app: ecommerce
     spec:
       containers:
@@ -54,8 +52,6 @@ spec:
             value: "true"
           - name: DD_PROFILING_ENABLED
             value: "true"
-          - name: DD_TRACE_SAMPLE_RATE
-            value: "1"
           - name: DD_ENV
             valueFrom:
               fieldRef:
