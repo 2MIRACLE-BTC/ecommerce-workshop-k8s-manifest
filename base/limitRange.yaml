@@ -43,7 +43,7 @@ metadata:
 spec:
   limits:
   - default:
-      cpu: 1000m  # 프로메테우스에 필요한 CPU 리소스. 예시로 1 코어 설정
+      cpu: 800m  # 프로메테우스에 필요한 CPU 리소스. 예시로 1 코어 설정
       memory: 1Gi  # 프로메테우스에 필요한 메모리 리소스. 예시로 2기가바이트 설정
     defaultRequest:
       cpu: 50m  # 프로메테우스의 기본 CPU 요청량. 예시로 500m 설정
