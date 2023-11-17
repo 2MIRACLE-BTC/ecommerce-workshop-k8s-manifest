@@ -78,11 +78,11 @@ spec:
         value: 1
         periodSeconds: 15
       selectPolicy: Max
-      stabilizationWindowSeconds: 60  # 3분 동안 CPU 사용률을 평가
+      stabilizationWindowSeconds: 90  # 3분 동안 CPU 사용률을 평가
     scaleDown:
       policies:
       - type: Pods
         value: 1
         periodSeconds: 15
       selectPolicy: Max
-      stabilizationWindowSeconds: 60  # 1분 동안 CPU 사용률을 평가
+      stabilizationWindowSeconds: 90  # 1분 동안 CPU 사용률을 평가
