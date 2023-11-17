@@ -24,6 +24,7 @@ spec:
       labels:
         tags.datadoghq.com/service: storefront
         tags.datadoghq.com/env: "development"
+        admission.datadoghq.com/enabled: "true"
         app: ecommerce
     spec:
       containers:
@@ -32,6 +33,10 @@ spec:
         command:
         - sh
         env:
+        - name: DD_PROFILING_ENABLED
+          value: "true"
+        - name: DD_TRACE_SAMPLE_RATE
+          value: "1"
         - name: DB_USERNAME
           value: user
         - name: DB_PASSWORD
