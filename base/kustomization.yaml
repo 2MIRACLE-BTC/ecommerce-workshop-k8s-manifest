@@ -8,7 +8,6 @@ resources:
   - namespace.yaml
   - ingress.yaml
   - front-hpa.yaml
-  - resourcequota.yaml
   - limitRange.yaml
 
 
